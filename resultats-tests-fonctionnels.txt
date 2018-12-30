@@ -1,0 +1,72 @@
+Note : Ce fichier donne la liste des tests effectués sur les fonctionnalités du projet binôme de gestion 
+de magasin.
+Environnement : Windows 10 64bits et Java version 8 (build 1.8.0_191)
+
+ -------------------------------------
+|Configuration avant la série de tests| :
+ -------------------------------------
+On double-clic sur l'exécutable .JAR et on a notre fichier "Catalogues.xml" configuré comme celui présent avec les sources du programme (c'est-à-dire avec seulement l'en-tête et une balise double "Catalogues"). 
+
+ ----
+|Note| :
+ ----
+Au milieu de la série de tests et lorsque ce sera indiqué, on ferme le programme et on le ré-ouvre pour 
+vérifier que les données persistantes ré-apparaissent bien dans le programme.
+
+
+ -------------------------------------
+|Liste d’objectifs fonctionnels testés| :
+ -------------------------------------
+ - L'utilisateur essaie de supprimer un catalogue. => OK (affichage message erreur)
+ 
+ - Il essaie d'ouvrir un catalogue. => OK (affichage message erreur)
+ 
+ - Il essaie de créer un catalogue sans nom. => OK (affichage message erreur)
+ 
+ - Il crée un catalogue nommé "Friandises". => OK & maj affichage & maj BD
+ 
+ - Il ouvre le catalogue. => OK (affichage nouvelle fenêtre)
+ 
+ - Il essaie de créer un produit sans renseigner le nom. => OK (affichage message erreur)
+ 
+ - Il essaie de créer un produit sans renseigner le prix. => OK (affichage message erreur)
+ 
+ - Il essaie de créer un produit sans renseigner le stock. => OK (affichage message erreur)
+ 
+ - Il crée un produit "Mars" avec un prix de 2.99€ et un stock de 17 produits. => OK & maj BD
+ 
+ - Il crée un produit "Raider" avec un prix de 5€ et un stock de 81 produits. => OK & maj BD
+  
+ - Il crée un produit "Treets" avec un prix de 3.7€ et un stock de 152 produits. => OK & maj BD
+ 
+ - Il demande l'affichage du contenu du catalogue. => OK & contenu correctement formaté (2 décimales)
+ 
+ - Il essaie de créer un produit "Bounty" avec un prix de 0€ et un stock de 1 produit. => OK (affichage message erreur)
+ 
+ - Il essaie de créer un produit "Bounty" avec un prix de -1.99€ et un stock de 15 produits. => OK (le signe "-" est impossible à taper,et en cas de copier-coller -> affichage message d'erreur au clic sur "Valider")
+  
+ - Il essaie de créer un produit "Bounty" avec un prix de 2€ et un stock de -3 produits. => OK (affichage message d'erreur si copier-coller, sinon signe "-" impossible à taper)
+ 
+ - Il essaie de créer un produit "Treets" avec un prix de 3.7€ et un stock de 152 produits. => OK (affichage message erreur car doublon)
+ 
+ - Il crée un catalogue nommé "Voitures". => OK & maj BD
+ 
+ - Il ouvre le catalogue. => OK
+ 
+ - Il crée un produit "206" avec un prix de 12 000€ et un stock de 12 voitures. => OK & maj BD
+ 
+ - Il supprime le produit "206". => OK & maj BD
+ 
+ - Il ferme le programme et le ré-ouvre. => OK & tout réapparaît correctement
+ 
+ - Il affiche les détails du catalogue "Voitures". => OK
+ 
+ - Il essaie de supprimer un produit du catalogue "Voitures". => ok (affichage message erreur)
+ 
+ - Il supprime le catalogue "Voitures". => OK & la fenêtre gestion se ferme automatiquement & maj BD
+ 
+ - Il enregistre une vente de 10 produits pour le produit "Treets". => OK & maj BD
+  
+ - Il enregistre un achat de 51 produits pour le produit "Mars". => OK & maj BD
+ 
+ - Il supprime le catalogue "Friandises". => OK & la fenêtre gestion se ferme
